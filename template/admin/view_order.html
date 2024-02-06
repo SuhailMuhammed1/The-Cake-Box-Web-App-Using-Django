@@ -1,0 +1,81 @@
+{% extends 'admin/header.html' %}
+
+{% block content %}
+
+ 
+    <div class="main-content">
+
+    <!-- content -->
+    <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin_page/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Orders</li>
+            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+            
+
+            <!-- supported elements -->
+            <div class="card card_border py-2 mb-4">
+                <form action="" method="POST" enctype="multipart/form-data">
+                           {% csrf_token %}
+                <div class="cards__heading">
+                    <h3>View Orders <span></span></h3>
+                </div>
+                <div class="card-body">
+                    <div style="overflow-x:auto;">
+                    <table class="table table-striped" >
+                        
+                          <tr>
+                            <th>Name</th>                        
+                            <th>Message</th>
+                            <th>Weight</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Ordered</th>                            
+                          </tr>
+                        
+                        
+                            {% for x in odr %}
+                          <tr>
+                            <td>{{x.pid.name}}</td>
+                            <td>{{x.message}}</td>
+                            <td>{{x.weight}}</td>
+                            <td style="padding-left:30px">{{x.quantity}}</td>
+                            <td>{{x.total}}</td>
+
+                            <td><a href="/view_bill/?id={{x.id}}">Bill</a></td>                             
+                          </tr>
+
+                             {% endfor %}
+                           
+
+                        
+                        </table>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <!-- // -->
+            <!-- supported elements -->
+           
+        </section>
+        <!-- //forms -->
+        
+
+  
+
+    </div>
+    <!-- //content -->
+
+</div>
+
+
+
+
+ {% endblock %}

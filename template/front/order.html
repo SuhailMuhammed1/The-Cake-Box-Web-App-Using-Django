@@ -1,0 +1,557 @@
+{% extends 'front/header.html' %}
+
+{% block content %}
+
+<style type="text/css">
+  .active1, .weight-button:hover {
+  background-color: #a58838;
+  color: white;
+}
+</style>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+   
+
+<script>
+
+// price get  
+function g()
+{
+  
+  var d=document.getElementById('pp').value;
+  document.getElementById('w').value='0.5Kg';
+  
+  $.ajax({
+
+        url:'/view/',
+        data:
+        {
+          'p':d
+        },
+        datatype: 'json',
+        success: function(data)
+        {
+          document.getElementById("kk").innerHTML=data.price1;
+          document.getElementById("p").value=data.price1;
+
+       
+        }
+
+
+      });
+}       
+
+
+</script> 
+
+<script>
+
+// price get  
+function h()
+{
+  
+  var d=document.getElementById('pp').value;
+  document.getElementById('w').value='1Kg';
+  
+  $.ajax({
+
+        url:'/view1/',
+        data:
+        {
+          'p':d
+        },
+        datatype: 'json',
+        success: function(data)
+        {
+          document.getElementById("kk").innerHTML=data.price2;
+          document.getElementById("p").value=data.price2;
+
+       
+        }
+
+
+      });
+}       
+
+
+</script> 
+
+<script>
+
+// price get  
+function j()
+{
+  
+  var d=document.getElementById('pp').value;
+  document.getElementById('w').value='2Kg';
+
+  
+  $.ajax({
+
+        url:'/view2/',
+        data:
+        {
+          'p':d
+        },
+        datatype: 'json',
+        success: function(data)
+        {
+          document.getElementById("kk").innerHTML=data.price3;
+          document.getElementById("p").value=data.price3;
+
+       
+        }
+
+
+      });
+}       
+
+
+</script> 
+
+<script>
+
+// price get  
+function k()
+{
+  
+  var d=document.getElementById('pp').value;
+  document.getElementById('w').value='3Kg';
+
+  
+  $.ajax({
+
+        url:'/view3/',
+        data:
+        {
+          'p':d
+        },
+        datatype: 'json',
+        success: function(data)
+        {
+          document.getElementById("kk").innerHTML=data.price4;
+          document.getElementById("p").value=data.price4;
+
+       
+        }
+
+
+      });
+}       
+
+
+
+</script> 
+
+<script>
+
+// price get  
+function l()
+{
+  
+  var d=document.getElementById('pp').value;
+  document.getElementById('w').value='4Kg';
+
+  
+  $.ajax({
+
+        url:'/view4/',
+        data:
+        {
+          'p':d
+        },
+        datatype: 'json',
+        success: function(data)
+        {
+          document.getElementById("kk").innerHTML=data.price5;
+          document.getElementById("p").value=data.price5;
+
+       
+        }
+
+
+      });
+}       
+
+
+</script> 
+
+
+  <!--+breadcrumbs-->
+      <section class="breadcrumbs-custom">
+        <div class="parallax-container ">
+          <div class="breadcrumbs_section">
+          <div class="breadcrumbs-custom-body parallax-content context-dark">
+            <div class="container">
+              <h1 class="breadcrumbs-custom-title">Product</h1>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="breadcrumbs-custom-footer">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="/">Home</a></li>
+              <!-- <li><a href="grid-shop.html">Shop</a></li> -->
+              <li class="active">Product</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Single Product-->
+      <section class="section section-xxl section-first bg-default">
+        <div class="container">
+          {% for x in query %}
+
+          <div class="row row-30">
+            <div class="col-lg-6">
+              <div class="slick-vertical slick-product">
+                <!-- Slick Carousel-->
+                
+                <div class="slick-slider carousel-parent" id="carousel-parent" data-items="1" data-swipe="true" data-child="#child-carousel" data-for="#child-carousel">
+                  <div class="item">
+                    <div class="slick-product-figure"><img src={{x.image.url}} alt="" width="530" height="480"/>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="slick-product-figure"><img src={{x.image1.url}} alt="" width="530" height="480"/>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="slick-product-figure"><img src={{x.image2.url}} alt="" width="530" height="480"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="slick-slider child-carousel slick-nav-1" id="child-carousel" data-arrows="true" data-items="3" data-sm-items="3" data-md-items="3" data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-md-vertical="true" data-for="#carousel-parent">
+                  <div class="item">
+                    <div class="slick-product-figure"><img src={{x.image.url}} alt="" width="530" height="480"/>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="slick-product-figure"><img src={{x.image1.url}} alt="" width="530" height="480"/>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="slick-product-figure"><img src={{x.image2.url}} alt="" width="530" height="480"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="single-product">
+                <form action="/single_order/?id={{x.id}}" method="post">
+                      {% csrf_token %}
+                  <input type="hidden" name="" id="pp" value="{{x.id}}">
+                  <input type="hidden" name="weight" id="w" value="0.5Kg">
+                  <input type="hidden" name="pid" value="{{x.id}}">
+                  <input type="hidden" name="total">
+                  
+                <h3 class="text-transform-none font-weight-medium">{{x.name}}</h3>
+                <div class="group-md group-middle">
+                 <div class="single-product-price">&#8377;</div> <div class="single-product-price" id="kk" style="margin-left:0px">{{x.price1}}</div>
+                  <input type="hidden" name="pp" value="{{x.price1}}" id="p">
+
+
+                  <!-- <div class="product-price product-price-old">700</div> -->
+                  <div class="single-product-rating"><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star-half"></span></div>
+                </div>
+                <!-- <p>Lorem ipsum dolor sit amet, ei impetus epicurei his, ne falli erant consequuntur est. Mei simul aperiam eu, an rebum regione ponderum mel. Facer placerat ut duo, id duis solum maiorum vis, vim autemsemper docendi cu. Pro</p> -->
+                <hr class="hr-gray-100">
+                <!-- <ul class="list list-description"> -->
+                  <!-- <li><span>Categories:</span><span>Cakes</span></li> -->
+                   <!-- <li><span>Box:</span><span>60 x 60 x 90 cm</span></li> -->
+                <!--   <li><span>Weight</span></li>
+                  <li>  </li>
+                  <li  class="nav" style="display: inline-block;border: 1px solid #888;color: #888;padding: 9px 17px;
+                  margin: 0 10px 0 0;
+                  font-size: 12px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  background-color: #fff;
+                  font-weight: 700;"><button type="button">googos</button>0.5 kg</li>
+                  <li style="display: inline-block;border: 1px solid #888;color: #888;padding: 9px 17px;
+                  margin: 0 10px 0 0;
+                  font-size: 12px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  background-color: #fff;
+                  font-weight: 700;">1 kg</li>
+                  <li style="display: inline-block;border: 1px solid #888;color: #888;padding: 9px 17px;
+                  margin: 0 10px 0 0;
+                  font-size: 12px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  background-color: #fff;
+                  font-weight: 700;">2 kg</li>
+                  <li style="display: inline-block;border: 1px solid #888;color: #888;padding: 9px 17px;
+                  margin: 0 10px 0 0;
+                  font-size: 12px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  background-color: #fff;
+                  font-weight: 700;">3 kg</li>
+                  <li style="display: inline-block;border: 1px solid #888;color: #888;padding: 9px 17px;
+                  margin: 0 10px 0 0;
+                  font-size: 12px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  background-color: #fff;
+                  font-weight: 700;">4 kg</li>
+
+                 
+                </ul><br> -->
+                
+               <div class="mydiv" id="myDIV" style="margin-top:15px">
+                <p style="margin-bottom:6px">Select weight</p>
+                <button class="weight-button active1" value="0.5Kg"  type="button" onclick="g()">0.5Kg</button>
+                <button class="weight-button"  value="1Kg"  type="button" onclick="h()">1Kg</button>
+                <button class="weight-button"  value="2Kg"  type="button" onclick="j()">2Kg</button>
+                <button class="weight-button"  value="3Kg"  type="button" onclick="k()">3Kg</button>
+                <button class="weight-button"  value="4Kg"  type="button" onclick="l()">4Kg</button>
+               </div>                
+
+
+               <div style="margin-top:15px"> 
+               <p style="margin-bottom:6px">Cake message</p>
+                <input type="text" name="message" placeholder="Message On Cake"></div>
+
+
+                <!-- <p><input  type="text" name="pincode" placeholder="Enter Delivery Pincode"></p> -->
+
+
+                
+
+                <div class="group-xs group-middle">
+                  <div class="product-stepper">
+                    <input class="form-input" name="quantity" type="number" data-zeros="true" value="1" min="1"  oninput="delayUpdate(this)" onmouseup="updateValue(this)">
+                  </div>
+                  <div><button class="button button-lg button-secondary button-zakaria" >Buy Now</button></div>
+                </div>
+                <hr class="hr-gray-100">
+                <div class="group-xs group-middle"><span class="list-social-title">Share</span>
+                  <div>
+                    <ul class="list-inline list-social list-inline-sm">
+                      <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                      <li><a class="icon mdi mdi-whatsapp" href="https://wa.me/919544739689"></a></li>
+                      <li><a class="icon mdi mdi-instagram" href="https://www.instagram.com/__the_cake_box/"></a></li>
+                      <li><a class="icon mdi mdi-gmail" href="mailto:thecakebox00@gmail.com"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+          <!-- Bootstrap tabs-->
+          <div class="tabs-custom tabs-horizontal tabs-line" id="tabs-1">
+            <!-- Nav tabs-->
+            <!-- <div class="nav-tabs-wrap">
+              <ul class="nav nav-tabs nav-tabs-1">
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1" data-toggle="tab">Reviews</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">Additional information</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-toggle="tab">Delivery and payment</a></li>
+              </ul>
+            </div> -->
+            <!-- Tab panes-->
+            <!-- <div class="tab-content tab-content-1">
+              <div class="tab-pane fade show active" id="tabs-1-1">
+                <div class="box-comment">
+                  <div class="unit flex-column flex-sm-row unit-spacing-md">
+                    <div class="unit-left"><a class="box-comment-figure" href="#"><img src="/static/front/images/testimonials/thumb1.jpg" alt="" width="119" height="119"/></a></div>
+                    <div class="unit-body">
+                      <div class="group-sm group-justify">
+                        <div>
+                          <div class="group-xs group-middle">
+                            <h5 class="box-comment-author"><a href="#">Jane Doe</a></h5>
+                            <div class="box-rating"><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span class="icon mdi mdi-star-half"></span></div>
+                          </div>
+                        </div>
+                        <div class="box-comment-time">
+                          <time datetime="2019-11-30">Nov 30, 2019</time>
+                        </div>
+                      </div>
+                      <p class="box-comment-text">Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum te.</p>
+                    </div>
+                  </div>
+                </div>
+                <h4 class="text-transform-none font-weight-medium">Leave a Review</h4>
+                <form class="ch-form ch-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="#">
+                  <div class="row row-20 row-md-30">
+                    <div class="col-lg-8">
+                      <div class="row row-20 row-md-30">
+                        <div class="col-sm-6">
+                          <div class="form-wrap">
+                            <input class="form-input" id="contact-first-name-2" type="text" name="name" data-constraints="@Required"/>
+                            <label class="form-label" for="contact-first-name-2">First Name</label>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-wrap">
+                            <input class="form-input" id="contact-last-name-2" type="text" name="name" data-constraints="@Required"/>
+                            <label class="form-label" for="contact-last-name-2">Last Name</label>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-wrap">
+                            <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required"/>
+                            <label class="form-label" for="contact-email-2">E-mail</label>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-wrap">
+                            <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric"/>
+                            <label class="form-label" for="contact-phone-2">Phone</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-wrap">
+                        <label class="form-label" for="contact-message-2">Message</label>
+                        <textarea class="form-input textarea-lg" id="contact-message-2" name="phone" data-constraints="@Required"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button-sm button-primary button-zakaria" type="submit">Submit</button>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="tabs-1-2">
+                <div class="single-product-info">
+                  <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
+                    <div class="unit-left"><span class="icon icon-80 mdi mdi-information-outline"></span></div>
+                    <div class="unit-body">
+                      <p>Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum teLorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum te</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="tabs-1-3">
+                <div class="single-product-info">
+                  <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
+                    <div class="unit-left"><span class="icon icon-80 mdi mdi-truck-delivery"></span></div>
+                    <div class="unit-body">
+                      <p>Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum teLorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum te</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- Related Products-->
+      <!-- <section class="section section-xl section-last bg-primary-2">
+        <div class="container">
+          <h4 class="font-weight-sbold">Featured Products</h4>
+          <div class="row row-lg row-30 row-lg-50 justify-content-center">
+            <div class="col-sm-6 col-md-5 col-lg-3"> -->
+              <!-- Product-->
+              <!-- <article class="product">
+                <div class="product-body">
+                  <div class="product-figure"><img src="/static/front/images/shop/shop-1.png" alt="" width="220" height="160"/>
+                  </div>
+                  <h5 class="product-title"><a href="single-product.html">Lorem ipsum dolor</a></h5>
+                  <div class="product-price-wrap">
+                    <div class="product-price product-price-old">$30.00</div>
+                    <div class="product-price">$17.00</div>
+                  </div>
+                </div><span class="product-badge product-badge-sale">Sale</span>
+                <div class="product-button-wrap">
+                  <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
+                  <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-3"> -->
+              <!-- Product-->
+              <!-- <article class="product">
+                <div class="product-body">
+                  <div class="product-figure"><img src="/static/front/images/shop/shop-3.png" alt="" width="128" height="220"/>
+                  </div>
+                  <h5 class="product-title"><a href="single-product.html">Lorem ipsum dolor</a></h5>
+                  <div class="product-price-wrap">
+                    <div class="product-price">$13.00</div>
+                  </div>
+                </div>
+                <div class="product-button-wrap">
+                  <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
+                  <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-3"> -->
+              <!-- Product-->
+              <!-- <article class="product">
+                <div class="product-body">
+                  <div class="product-figure"><img src="/static/front/images/shop/shop-5.png" alt="" width="145" height="163"/>
+                  </div>
+                  <h5 class="product-title"><a href="single-product.html">Lorem ipsum dolor</a></h5>
+                  <div class="product-price-wrap">
+                    <div class="product-price">$17.00</div>
+                  </div>
+                </div>
+                <div class="product-button-wrap">
+                  <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
+                  <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-3"> -->
+              <!-- Product-->
+              <!-- <article class="product">
+                <div class="product-body">
+                  <div class="product-figure"><img src="/static/front/images/shop/shop-7.png" alt="" width="117" height="131"/>
+                  </div>
+                  <h5 class="product-title"><a href="single-product.html">Lorem ipsum dolor</a></h5>
+                  <div class="product-price-wrap">
+                    <div class="product-price">$11.00</div>
+                  </div>
+                </div>
+                <div class="product-button-wrap">
+                  <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
+                  <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+
+<script type="text/javascript">
+  // Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("weight-button");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active1");
+  current[0].className = current[0].className.replace(" active1", "");
+  this.className += " active1";
+  });
+}
+function alertValue(alertButton){
+  alert(alertButton.value)
+}
+</script>
+
+<script type="text/javascript">
+  function changeQuantity(amount) {
+      var inputElement = document.getElementById('quantityInput');
+      var currentValue = parseInt(inputElement.value, 10);
+      
+      // Ensure the new value stays within the specified range (min, max)
+      var newValue = Math.min(Math.max(currentValue + amount, parseInt(inputElement.min, 10)), parseInt(inputElement.max, 10));
+      
+      inputElement.value = newValue;
+  }
+  </script>
+
+ {% endblock %}

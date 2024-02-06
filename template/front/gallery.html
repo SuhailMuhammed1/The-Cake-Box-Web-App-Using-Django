@@ -1,0 +1,185 @@
+{% extends 'front/header.html' %}
+
+{% block content %}
+
+
+  <!--+breadcrumbs-->
+      <section class="breadcrumbs-custom">
+        <div class="parallax-container ">
+          <div class="breadcrumbs_section">
+          <div class="breadcrumbs-custom-body parallax-content context-dark">
+            <div class="container">
+              <h1 class="breadcrumbs-custom-title">Gallery</h1>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="breadcrumbs-custom-footer">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="/">Home</a></li>
+              <li class="active">Gallery</li>
+              
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Grid Gallery-->
+      <section class="section section-xl bg-default">
+        <div class="container isotope-wrap">
+          <div class="isotope-filters">
+            <button class="isotope-filters-toggle button button-sm button-icon button-icon-right button-default-outline" data-custom-toggle=".isotope-filters-list" data-custom-toggle-disable-on-blur="true" data-custom-toggle-hide-on-blur="true"><span class="icon mdi mdi-chevron-down"></span>Filter</button>
+            <div class="isotope-filters-list-wrap">
+              <ul class="isotope-filters-list">
+                <li><a class="active" href="#" data-isotope-filter="*">View all</a></li>
+                <li><a href="#" data-isotope-filter="Type 1">Cakes</a></li>
+                <li><a href="#" data-isotope-filter="Type 2">Other pastry</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row row-30 isotope" data-lightgallery="group">
+            <div class="col-sm-6 col-lg-3 isotope-item" data-filter="Type 1">
+              <!-- Thumbnail Classic-->
+              <article class="thumbnail-classic block-1">
+                <div class="thumbnail-classic-figure"><img src="/static/front/images/grid-gallery/ccc.jpg" alt="" width="370" height="315"/>
+                </div>
+                <div class="thumbnail-classic-caption">
+                  <div>
+                    <h5 class="thumbnail-classic-title"><a href="/productlist/?id={{4}}">CupCakes</a></h5>
+                    <!-- <div class="thumbnail-classic-price">$8.99</div> -->
+                    <!-- <div class="thumbnail-classic-button-wrap">
+                      <div class="thumbnail-classic-button"><a class="button button-gray-6 button-zakaria fl-bigmug-line-search74" href="/static/front/images/grid-gallery/image-1.jpg" data-lightgallery="item"><img src="/static/front/images/grid-gallery/image-1.jpg" alt="" width="370" height="315"/></a></div> -->
+                      <!-- <div class="thumbnail-classic-button"><a class="button button-secondary-3 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3 isotope-item" data-filter="Type 1">
+              <!-- Thumbnail Classic-->
+              <article class="thumbnail-classic block-1">
+                <div class="thumbnail-classic-figure"><img src="/static/front/images/grid-gallery/cc.jpg" alt="" width="370" height="315"/>
+                </div>
+                <div class="thumbnail-classic-caption">
+                  <div>
+                    <h5 class="thumbnail-classic-title"><a href="/productlist/?id={{3}}">Cartoon Cake</a></h5>
+                    <!-- <div class="thumbnail-classic-price">$12.99</div> -->
+                    <!-- <div class="thumbnail-classic-button-wrap">
+                      <div class="thumbnail-classic-button"><a class="button button-gray-6 button-zakaria fl-bigmug-line-search74" href="/static/front/images/grid-gallery/image-2.jpg" data-lightgallery="item"><img src="/static/front/images/grid-gallery/image-2.jpg" alt="" width="370" height="315"/></a></div> -->
+                      <!-- <div class="thumbnail-classic-button"><a class="button button-secondary-3 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3 isotope-item" data-filter="Type 2">
+              <!-- Thumbnail Classic-->
+              <article class="thumbnail-classic block-1">
+                <div class="thumbnail-classic-figure"><img src="/static/front/images/grid-gallery/cp.jpg" alt="" width="370" height="315"/>
+                </div>
+                <div class="thumbnail-classic-caption">
+                  <div>
+                    <h5 class="thumbnail-classic-title"><a href="/productlist/?id={{8}}">Cake Pops</a></h5>
+                    <!-- <div class="thumbnail-classic-price">$10.99</div> -->
+                    <!-- <div class="thumbnail-classic-button-wrap">
+                      <div class="thumbnail-classic-button"><a class="button button-gray-6 button-zakaria fl-bigmug-line-search74" href="/static/front/images/grid-gallery/image-3.jpg" data-lightgallery="item"><img src="/static/front/images/grid-gallery/image-3.jpg" alt="" width="370" height="315"/></a></div> -->
+                      <!-- <div class="thumbnail-classic-button"><a class="button button-secondary-3 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3 isotope-item" data-filter="Type 1">
+              <!-- Thumbnail Classic-->
+              <article class="thumbnail-classic block-1">
+                <div class="thumbnail-classic-figure"><img src="/static/front/images/grid-gallery/wd.jpg" alt="" width="370" height="315"/>
+                </div>
+                <div class="thumbnail-classic-caption">
+                  <div>
+                    <h5 class="thumbnail-classic-title"><a href="/productlist/?id={{2}}">Wedding Cake</a></h5>
+                    <!-- <div class="thumbnail-classic-price">$13.99</div> -->
+                    <!-- <div class="thumbnail-classic-button-wrap">
+                      <div class="thumbnail-classic-button"><a class="button button-gray-6 button-zakaria fl-bigmug-line-search74" href="/static/front/images/grid-gallery/image-4.jpg" data-lightgallery="item"><img src="/static/front/images/grid-gallery/image-4.jpg" alt="" width="370" height="315"/></a></div> -->
+                      <!-- <div class="thumbnail-classic-button"><a class="button button-secondary-3 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3 isotope-item" data-filter="Type 2">
+              <!-- Thumbnail Classic-->
+              <article class="thumbnail-classic block-1">
+                <div class="thumbnail-classic-figure"><img src="/static/front/images/grid-gallery/image-5.jpg" alt="" width="370" height="315"/>
+                </div>
+                <div class="thumbnail-classic-caption">
+                  <div>
+                    <h5 class="thumbnail-classic-title"><a href="/productlist/?id={{5}}">Donut</a></h5>
+                    <!-- <div class="thumbnail-classic-price">$14.99</div> -->
+                    <!-- <div class="thumbnail-classic-button-wrap">
+                      <div class="thumbnail-classic-button"><a class="button button-gray-6 button-zakaria fl-bigmug-line-search74" href="/static/front/images/grid-gallery/image-5.jpg" data-lightgallery="item"><img src="/static/front/images/grid-gallery/image-5.jpg" alt="" width="370" height="315"/></a></div> -->
+                      <!-- <div class="thumbnail-classic-button"><a class="button button-secondary-3 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3 isotope-item" data-filter="Type 2">
+              <!-- Thumbnail Classic-->
+              <article class="thumbnail-classic block-1">
+                <div class="thumbnail-classic-figure"><img src="/static/front/images/grid-gallery/cs.jpg" alt="" width="370" height="315"/>
+                </div>
+                <div class="thumbnail-classic-caption">
+                  <div>
+                    <h5 class="thumbnail-classic-title"><a href="/productlist/?id={{7}}">Cakesicles</a></h5>
+                    <!-- <div class="thumbnail-classic-price">$16.99</div> -->
+                    <!-- <div class="thumbnail-classic-button-wrap">
+                      <div class="thumbnail-classic-button"><a class="button button-gray-6 button-zakaria fl-bigmug-line-search74" href="/static/front/images/grid-gallery/image-6.jpg" data-lightgallery="item"><img src="/static/front/images/grid-gallery/image-6.jpg" alt="" width="370" height="315"/></a></div> -->
+                      <!-- <div class="thumbnail-classic-button"><a class="button button-secondary-3 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 isotope-item" data-filter="Type 1">
+              <!-- Thumbnail Classic-->
+              <article class="thumbnail-classic block-1">
+                <div class="thumbnail-classic-figure"><img src="/static/front/images/grid-gallery/bc.jpg" alt="" width="370" height="315"/>
+                </div>
+                <div class="thumbnail-classic-caption">
+                  <div>
+                    <h5 class="thumbnail-classic-title"><a href="/productlist/?id={{1}}">Birthday Cake</a></h5>
+                    <!-- <div class="thumbnail-classic-price">$16.99</div> -->
+                    <!-- <div class="thumbnail-classic-button-wrap">
+                      <div class="thumbnail-classic-button"><a class="button button-gray-6 button-zakaria fl-bigmug-line-search74" href="/static/front/images/grid-gallery/image-7.jpg" data-lightgallery="item"><img src="/static/front/images/grid-gallery/image-7.jpg" alt="" width="370" height="315"/></a></div> -->
+                      <!-- <div class="thumbnail-classic-button"><a class="button button-secondary-3 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 isotope-item" data-filter="Type 2">
+              <!-- Thumbnail Classic-->
+              <article class="thumbnail-classic block-1">
+                <div class="thumbnail-classic-figure"><img src="/static/front/images/grid-gallery/jc.jpg" alt="" width="370" height="315"/>
+                </div>
+                <div class="thumbnail-classic-caption">
+                  <div>
+                    <h5 class="thumbnail-classic-title"><a href="/productlist/?id={{6}}">Jar Cakes</a></h5>
+                    <!-- <div class="thumbnail-classic-price">$16.99</div> -->
+                    <!-- <div class="thumbnail-classic-button-wrap">
+                      <div class="thumbnail-classic-button"><a class="button button-gray-6 button-zakaria fl-bigmug-line-search74" href="/static/front/images/grid-gallery/image-8.jpg" data-lightgallery="item"><img src="/static/front/images/grid-gallery/image-8.jpg" alt="" width="370" height="315"/></a></div> -->
+                      <!-- <div class="thumbnail-classic-button"><a class="button button-secondary-3 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+
+ {% endblock %}
+   

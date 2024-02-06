@@ -1,0 +1,147 @@
+{% extends 'front/header.html' %}
+
+{% block content %} 
+ 
+
+  <!--+breadcrumbs-->
+      <section class="breadcrumbs-custom">
+        <div class="parallax-container ">
+          <div class="breadcrumbs_section">
+          <div class="breadcrumbs-custom-body parallax-content context-dark">
+            <div class="container">
+              {% for x in single %}
+              <h1 class="breadcrumbs-custom-title">{{x.category}}</h1>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="breadcrumbs-custom-footer">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="/">Home</a></li>
+              {% for x in single %}
+              <li class="active">{{x.category}}</li>
+              {% endfor %}
+
+              <!-- <li class="active">Grid Shop</li> -->
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Section Shop-->
+      <section class="section section-xxl bg-primary-2 text-md-left">
+        <div class="container">
+          <div class="row row-50">
+           
+            <!-- <div class="col-lg-8 col-xl-9"> -->
+              <div class="product-top-panel group-md" style="width:1200px;padding-left:20px ">
+                <p class="product-top-panel-title">Showing 1–{{ query|length }} of {{ total_items }} results</p>
+                <div>
+                  <!-- <div class="group-sm group-middle">
+                    <div class="product-top-panel-sorting">
+                      <select>
+                        <option value="1">Sort by newness</option>
+                        <option value="2">Sort by popularity</option>
+                        <option value="3">Sort by alphabet</option>
+                      </select>
+                    </div>
+                    <div class="product-view-toggle"><a class="mdi mdi-apps product-view-link product-view-grid active" href="grid-shop.html"></a><a class="mdi mdi-format-list-bulleted product-view-link product-view-list" href="shop-list.html"></a></div>
+                  </div> -->
+                </div>
+              </div>
+
+         <section class="section section-xxl bg-primary-2">
+    <div class="container">
+      
+      <div class="row row-lg row-30 row-lg-50">
+
+              {% for x in query %}
+              {% if forloop.counter <= 8 %}
+        <div class="col-sm-6 col-md-4 col-lg-3"> 
+          <!-- Product-->
+          <article class="product wow fadeInRight">
+            <div class="product-body">
+              <div class="product-figure"><img src="{{x.image.url}}" alt="" /> </div>
+              <h5 class="product-title" style="color: black;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><a href="/order/?id={{x.id}}">{{x.name}}</a></h5>
+              <div class="product-price-wrap">
+                <!-- <div class="product-price product-price-old">{{x.price1}}</div> -->
+                <div class="product-price">₹{{x.price1}}</div>
+              </div>
+            </div>
+            <!-- <span class="product-badge product-badge-sale">Sale</span> -->
+            <div class="product-button-wrap">
+              <!-- <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="/order/?id={{x.id}}"></a></div> -->
+              <div class="product-button">
+                <a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="#" onclick="openInNewTab('/order/?id={{ x.id }}'); return false;"></a>
+              </div>
+            </div>
+          </article>
+        </div>
+        {% endif %}
+              {% endfor %}
+
+
+       
+
+
+              <div class="pagination-wrap">
+                <nav aria-label="Page navigation" style="width:1200px">
+                    <ul class="pagination">
+                        <!-- Previous button -->
+                        {% if query.has_previous %}
+                            <li class="page-item page-item-control">
+                                <a class="page-link" href="?id={{ categoryid }}&page={{ query.previous_page_number }}" aria-label="Previous">
+                                    <span class="icon" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="page-item page-item-control disabled">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span class="icon" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                        {% endif %}
+            
+                        <!-- Page numbers -->
+                        {% for num in query.paginator.page_range %}
+                            <li class="{% if query.number == num %}active{% endif %}">
+                                <a class="page-link" href="?id={{ categoryid }}&page={{ num }}">{{ num }}</a>
+                            </li>
+                        {% endfor %}
+            
+                        <!-- Next button -->
+                        {% if query.has_next %}
+                            <li class="page-item page-item-control">
+                                <a class="page-link" href="?id={{ categoryid }}&page={{ query.next_page_number }}" aria-label="Next">
+                                    <span class="icon" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="page-item page-item-control disabled">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span class="icon" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+                        
+            
+            
+        
+          </div>
+        </div>
+      </section>
+      </section>
+  
+      <script type="text/javascript">
+        function openInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+        </script>
+ 
+ {% endblock %}
+ 

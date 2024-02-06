@@ -1,0 +1,56 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Cake Box - Online Cake Shop</title>
+	<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/static/front/images/logos/cakess1.png" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smart Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link href="/static/login/css/style.css" rel="stylesheet" type="text/css" media="all">
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900iSlabo+27px&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<!--//online-fonts -->
+<body>
+<!--header-->
+	<!-- <img src="/static/login/images/cake2.png" alt="txt" > -->
+<div style="margin-top:100px"> 
+<div class="agileheader">
+	<img src="/static/login/images/cake2.png" alt="txt" >
+	<!-- <h1>The Cake Box</h1> -->
+</div></div>
+<!--//header-->
+
+<!--main-->
+<div style="margin-top:50px"> 
+<div class="main-w3l">
+<div class="w3layouts-main">
+	<h2>Login </h2>
+		<form action="/admin_login/" method="post">
+			{% csrf_token %}
+			<input value="E-MAIL" name="email" type="email" required="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}"/>
+			<input value="PASSWORD" name="password" type="password" required="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
+				<input type="submit" value="login" name="login">
+		</form>
+</div>
+</div></div>
+<!--//main-->
+
+<!--footer-->
+<div class="footer-w3l">
+	<p>Copyright © 2021 <a href="/">The Cake Box</a>. All Right Reserved.</p>
+</div>
+<!--//footer-->
+
+</body>
+</html>

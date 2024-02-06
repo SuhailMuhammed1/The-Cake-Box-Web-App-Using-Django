@@ -1,0 +1,153 @@
+{% extends 'admin/header.html' %}
+
+{% block content %}
+
+<!-- main content start -->
+<div class="main-content">
+
+    <!-- content -->
+    <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin_page/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Update Product</li>
+            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+            <!-- forms 3 -->
+            <div class="card card_border py-2 mb-4">
+                <div class="cards__heading">
+                    <h3>Update Product<span></span></h3>
+                </div>
+                <div class="card-body">
+                    {% for x in p %}
+                    <form action="/update_view_product/?id={{x.id}}" method="POST" enctype="multipart/form-data">
+                         {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label input__label">Category</label>
+                            <div class="col-sm-10">
+                            <select   type="text" name="cid"  class="form-control input-style" required="">
+                                {% for x in category %}
+                                <option value="{{x.id}}">{{x.category}}</option>
+                                {% endfor %}
+
+                                {% for y in category %}
+                                <option value="{{x.id}}">{{y.category}}</option>
+
+                                {% endfor %}
+
+                            </select>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label  class="col-sm-2 col-form-label input__label">Image 1</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do you want to update image:
+                            <input type="radio" name="imgupdate1" value="Yes">Yes &nbsp;
+                            <input type="radio" name="imgupdate1" value="No" checked>No &nbsp;
+                            <div class="col-sm-10">
+                                <input type="file" name="image"  class="form-control input-style" placeholder="Image 1" value="{{x.image.url}}">
+                                <img src="{{x.image.url}}"width="100px" height="100px"> 
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label  class="col-sm-2 col-form-label input__label">Image 2</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do you want to update image:
+                            <input type="radio" name="imgupdate2" value="Yes">Yes &nbsp;
+                            <input type="radio" name="imgupdate2" value="No" checked>No &nbsp;
+                            <div class="col-sm-10">
+                                <input type="file" name="image1"  class="form-control input-style"  placeholder="Image 2" value="{{x.image1.url}}">
+                                <img src="{{x.image1.url}}"width="100px" height="100px"> 
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label  class="col-sm-2 col-form-label input__label">Image 3</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do you want to update image:
+                            <input type="radio" name="imgupdate3" value="Yes">Yes &nbsp;
+                            <input type="radio" name="imgupdate3" value="No" checked>No &nbsp;
+                            <div class="col-sm-10">
+                                <input type="file" name="image2"  class="form-control input-style"  placeholder="Image 3" value="{{x.image2.url}}">
+                                <img src="{{x.image2.url}}"width="100px" height="100px"> 
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label input__label">Product Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-style" name="name" 
+                                    placeholder="Product Name" value="{{x.name}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label input__label">Price 0.5kg</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-style" name="price1" 
+                                    placeholder="Price 0.5kg" value="{{x.price1}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label input__label">Price 1kg</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-style" name="price2" 
+                                    placeholder="Price 1kg" value="{{x.price2}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label input__label">Price 2kg</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-style" name="price3" 
+                                    placeholder="Price 2kg" value="{{x.price3}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label input__label">Price 3kg</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-style" name="price4" 
+                                    placeholder="Price 3kg" value="{{x.price4}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label input__label">Price 4kg</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-style" name="price5" 
+                                    placeholder="Price 4kg" value="{{x.price5}}">
+                            </div>
+                        </div>
+    
+                           {% endfor %}
+                        <!-- <div class="form-group row">
+                            <div class="col-sm-2">Checkbox</div>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                    <label class="form-check-label" for="gridCheck1">
+                                        Example checkbox
+                                    </label>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary btn-style">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </section>
+        <!-- //forms -->
+        
+
+    </div>
+    <!-- //content -->
+
+</div>
+<!-- main content end-->
+
+
+ {% endblock %}
