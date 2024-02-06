@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'online_cake.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cak_db',
+        'NAME': 'databases',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -141,5 +141,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'thecakebox00@gmail.com' 
-EMAIL_HOST_PASSWORD = 'ethkesdeynjnbrdv'
+EMAIL_HOST_USER = 'yourmail@gmail.com' 
+EMAIL_HOST_PASSWORD = 'password'
