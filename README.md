@@ -1,6 +1,6 @@
 # The Cake Box - Online Cake Shop Web App Using Django
 
-Welcome to the The Cake Box Web App! This project aims to create a user-friendly web application for shopping cakes from The Cake Box.
+Welcome to the The Cake Box Web App!. This project aims to create a user-friendly web application for shopping cakes from The Cake Box.
 
 ## Table of Contents
 
