@@ -48,4 +48,4 @@ To get started with the project, follow these steps:
 
 ## Screenshots
 
-![cabinco_screenshots](https://github.com/SuhailMuhammed1/Cabinco-Luxury-Car-Rental-Web-App-Using-Django/assets/104970300/efe0fe60-4681-44f6-97a8-2d3985d57442)
+![cakeboxmockup](https://github.com/SuhailMuhammed1/The-Cake-Box-Web-App-Using-Django/assets/104970300/0773bf87-2a4c-48c1-bc2d-5fdf7b2e4066)
